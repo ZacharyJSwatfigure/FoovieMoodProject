@@ -13,7 +13,6 @@ header {
     line-height: 20px;
     border: 1px solid black;
     border-radius: 5%;
-
 }
 
 .searchBar {
@@ -64,3 +63,4 @@ header {
 ul.dishList {
     list-style-type: none;
 }
+
