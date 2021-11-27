@@ -1,0 +1,18 @@
+header {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
