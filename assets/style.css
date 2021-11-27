@@ -16,3 +16,19 @@ header {
     justify-content: center;
     margin-top: 60px;
 }
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.title {
+    font-size: 35px;
+    text-decoration: underline 3px solid;
+}
+
+.displaySearch {
+    flex-direction: row;
+}
