@@ -9,10 +9,9 @@ header {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 60px;
-    line-height: 20px;
-    border: 1px solid black;
-    border-radius: 5%;
+   align-items: center;
+    height: 100%;
+    font-size: 40px;
     
 }
 
