@@ -5,9 +5,12 @@ header {
     margin-top: 40px;
 }
 
-.description {
+#description {
+    font-size: 16;
     display: flex;
     justify-content: center;
+
+    max-width: 500px;
     text-align: center;
     margin-top: 60px;
     line-height: 20px;
@@ -19,6 +22,10 @@ header {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+#userInput {
+    width: 500px;
 }
 
 .options {
@@ -61,6 +68,6 @@ header {
 }
 
 ul.dishList {
+
     list-style-type: none;
 }
-
