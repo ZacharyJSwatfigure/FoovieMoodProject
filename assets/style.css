@@ -32,3 +32,26 @@ header {
 .displaySearch {
     flex-direction: row;
 }
+
+.theMovie {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#movieTitle {
+    font-size: 35px;
+}
+
+#moviePoster {
+
+}
+
+#movieDescription {
+    font-size: 15px;
+}
+
+#movieCountry {
+    font-size: 20px;
+}
