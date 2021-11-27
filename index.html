@@ -13,11 +13,24 @@
         The Foovie Mood
     </header>
 
+
     <section class = "description">
        <p> Hello, and welcome to the Foovie Mood webpage! Do you have a favorite movie? Of course you do! Take that favorite movie of yours and enter the title into
         the search bar below to search for five random dishes from that movies country of origin. Search again if you do not find a dish that intrests you, or select on of the dishes an enjoy!
         Don't have a favorite Movie?!? (weirdooo...) You can click the 'Random Movie' button to get a random movie and dish!
     </p>
+
+
+    <section id="description">
+
+        <h3>
+            Hello, and welcome to the Foovie Mood webpage! Do you have a favorite movie? Of course you do! Take that favorite movie of yours and enter the title into
+            the search bar below to search for five random dishes from that movies country of origin. Search again if you do not find a dish that intrests you, or select on of the dishes an enjoy!
+            Don't have a favorite Movie?!? (weirdooo...) You can click the 'Random Movie' button to get a random movie and dish!
+        </h3>
+    
+
+
     </section>
 
 <br />
@@ -25,7 +38,7 @@
 
     <section class = "searchBar">
         <div>
-            <input id = "userInput" placeholder="Enter a Movie of your choosing here" type = "text"></input>
+            <input id ="userInput" placeholder="Enter a Movie of your choosing here" type = "text"></input>
             <button id = "searchBtn">Search Movies</button>
 
             <button id = "randomMovie">Random Movie</button>
@@ -33,7 +46,6 @@
     </section>
 
 
-        
     <!-- this will contain to divs display the searched for data -->
     <section class = "options">
         <div class = "displaySearch">
@@ -48,6 +60,15 @@
 
         <div class = "displaySearch">
             <h1 class = "title">The Dishes</h1>
+
+            <ul class="dishList">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+
+                <li>4</li>
+                <li>5</li>
+          </ul>
         </div>
     </section>
 
@@ -62,5 +83,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src= assets/script.js></script>
+
 </body>
 </html>

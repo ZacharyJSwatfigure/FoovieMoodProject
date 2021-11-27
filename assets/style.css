@@ -5,20 +5,34 @@ header {
     margin-top: 40px;
 }
 
-.description {
+#description {
+    font-size: 16;
     display: flex;
     justify-content: center;
+
+    max-width: 500px;
     text-align: center;
+
    align-items: center;
     height: 100%;
     font-size: 40px;
     
+
+    margin-top: 60px;
+    line-height: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+
 }
 
 .searchBar {
     display: flex;
     justify-content: center;
     margin-top: 60px;
+}
+
+#userInput {
+    width: 500px;
 }
 
 .options {
@@ -58,4 +72,9 @@ header {
 
 #movieCountry {
     font-size: 20px;
+}
+
+ul.dishList {
+
+    list-style-type: none;
 }
