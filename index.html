@@ -4,15 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- MD Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.0/mdb.min.css" rel="stylesheet"/>
-    <!-- linked to CSS -->
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/style.css" />
     <title>Foovie Mood Main</title>
 </head>
 <body>
 
-    <!-- linked to JS -->
-    <script src="assets/script.js"></script>
+    <header>
+        The Foovie Mood
+    </header>
+
+    <p class = "description">
+        Hello, and welcome to the Foovie Mood webpage! Do you have a favorite movie? Of course you do! Take that favorite movie of yours and enter the title into
+        the search bar below to search for five random dishes from that movies country of origin. Search again if you do not find a dish that intrests you, or select on of the dishes an enjoy!
+        Don't have a favorite Movie?!? (weirdooo...) You can click the 'Random Movie' button to get a random movie and dish!
+    </p>
+
+<br />
+    <!-- here is the section for the query part -->
+
+    <section class = "searchBar">
+        <div>
+            <input id = "userInput" placeholder="Enter a Movie of your choosing here" type = "text"></input>
+            <button id = "searchBtn">Search Movies</button>
+
+            <button id = "randomMovie">Random Movie</button>
+        </div>
+    </section>
+
+
+
+    <!-- this will contain to divs display the searched for data -->
+    <section class = "options">
+        <div class = "displaySearch">
+            <h1 class = "title">The Movie</h1>
+            <div class = "theMovie">
+                <h2 id = "movieTitle">Title</h2>
+                <h2 id = "MoviePoster">Poster</h2>
+                <h2 id = "movieDescription">Description</h2>
+                <h2 id = "movieCountry">Country of Origin</h2>
+            </div>
+        </div>
+
+        <div class = "displaySearch">
+            <h1 class = "title">The Dishes</h1>
+            <ul class="dishList">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src= assets/script.js></script>
+>>>>>>> 32b6b5f1cb8f3ea73dafeecb36d79c557c2439af
 </body>
 </html>

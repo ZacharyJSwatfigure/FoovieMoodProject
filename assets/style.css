@@ -1,0 +1,66 @@
+header {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.description {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+    line-height: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
+
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 60px;
+}
+
+.title {
+    font-size: 35px;
+    text-decoration: underline 3px solid;
+}
+
+.displaySearch {
+    flex-direction: row;
+}
+
+.theMovie {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+#movieTitle {
+    font-size: 35px;
+}
+
+#moviePoster {
+
+}
+
+#movieDescription {
+    font-size: 15px;
+}
+
+#movieCountry {
+    font-size: 20px;
+}
+
+ul.dishList {
+    list-style-type: none;
+}
