@@ -9,7 +9,13 @@ header {
     font-size: 16;
     display: flex;
     justify-content: center;
+
     max-width: 500px;
+    text-align: center;
+    margin-top: 60px;
+    line-height: 20px;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
 .searchBar {
@@ -62,4 +68,6 @@ header {
 }
 
 ul.dishList {
+
     list-style-type: none;
+}
