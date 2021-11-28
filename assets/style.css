@@ -5,23 +5,11 @@ header {
     margin-top: 40px;
 }
 
-#description {
-    font-size: 16;
+.description {
     display: flex;
-    justify-content: center;
-
     max-width: 500px;
-    text-align: center;
-
-   align-items: center;
-    height: 100%;
-    font-size: 40px;
-    
-
-    margin-top: 60px;
-    line-height: 20px;
-    border: 1px solid black;
-    border-radius: 5%;
+    justify-content: center;
+    margin: auto;
 
 }
 
