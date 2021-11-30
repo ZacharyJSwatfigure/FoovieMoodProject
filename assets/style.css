@@ -66,3 +66,10 @@ ul.dishList {
 
     list-style-type: none;
 }
+
+#Poster {
+    width : 300px;
+    height: 450px;
+    float: left;
+}
+
