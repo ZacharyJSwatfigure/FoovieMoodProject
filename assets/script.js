@@ -20,6 +20,22 @@ function Search(SearchMovie){
 
 function init(result) {
     console.log (result);
+    let movieT = document.getElementById('movieTitle');
+    let countryOrigin = document.getElementById('movieCountry');
+    let moviePlot= document.getElementById('movieDescription');
+
+
+    let movPoster = new Image(300,450);
+
+
+    movieT.innerText=result.Title;
+    countryOrigin.innerText= result.Country;
+    moviePlot.innerText= result.Plot;
+
+    posterURL= result.Poster;
+    movPoster.src= `${posterURL}`;
+    document.getElementById('moviePoster').append(movPoster);
+
 }
 
 
