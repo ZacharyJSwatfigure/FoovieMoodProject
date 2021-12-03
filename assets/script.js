@@ -1,57 +1,53 @@
 
 let MovieApi = 'db3a630e';
 let searchQ;
-let countryArr = []
-let foodType = ""
+let countryArr = [];
+let foodType = "";
+let foodListArr = [];
+
 
 function getSearchQ(SearchMovie) {
-    searchQ= 't';
+    searchQ = 't';
 }
 
-function Search(SearchMovie){
+function Search(SearchMovie) {
     getSearchQ(SearchMovie);
-    fetch (`https://www.omdbapi.com/?apikey=${MovieApi}&${searchQ}=${SearchMovie}`)
-        .then(result=> {
+    fetch(`https://www.omdbapi.com/?apikey=${MovieApi}&${searchQ}=${SearchMovie}`)
+        .then(result => {
             return result.json();
         })
-        .then(result=> {
+        .then(result => {
             init(result);
-        
+
         })
 
 }
 
-
-
-
-
-
-
 function init(result) {
-    console.log (result);
+    console.log(result);
     let movieT = document.getElementById('movieTitle');
     let countryOrigin = document.getElementById('movieCountry');
-    let moviePlot= document.getElementById('movieDescription');
+    let moviePlot = document.getElementById('movieDescription');
     let mPoster = document.getElementById('Poster');
 
     let countryArr = result.Country.split(",").map(function (value) {
         return value.trim();
     });
-    console.log (countryArr);
+    console.log(countryArr);
 
 
     //let movPoster = new Image(300,450);
 
 
-    
-    switch (countryArr[1]) {
+
+    switch (countryArr[0]) {
         case 'United States':
         case 'Canada':
             foodType = "American";
             console.log("American")
             break;
         case 'Poland':
-        case 'United Kingdom':    
+        case 'United Kingdom':
         case 'Germany':
         case 'Ukraine':
             console.log("Europe Dish");
@@ -72,46 +68,49 @@ function init(result) {
             break;
         case "Japan":
             foodType = "Japanese";
-                default:
+        default:
             break;
     }
-        fetch(`https://api.edamam.com/api/recipes/v2?app_id=fea86a91&app_key=2b9e76ada8e917607dc4fd6bd442e887&type=public&cuisineType=${foodType}`)
-            .then( response => {
-                return response.json();
-            })
-            .then( response => {
-                food(response);
-            })
-            function food(response) {
-                console.log(response);
-                for (let i = 0; i < 3; i++) {
-                    myRandomNum = Math.floor(Math.random() * 500)
-                    console.log("myRandomNum")
-                    response.keys[myRandomNum];
-                    console.log(`response.keys[myRandomNum]`)
+    fetch(`https://api.edamam.com/api/recipes/v2?app_id=fea86a91&app_key=2b9e76ada8e917607dc4fd6bd442e887&type=public&dishType=Main_course&cuisineType=${foodType}`)
+        .then(response => {
+            return response.json();
+        })
+        .then(response => {
+            food(response);
+        })
+    function food(response) {
+        console.log(response);
+        for (let i = 0; i < 3; i++) {                                                                               
+            // foodListArr.push(response.hits[Math.floor(Math.random() * 19)]);
 
-                }
-            }
+            // console.log(foodListArr, "here is log");
+
+            recipeOneName = document.getElementById("recipeOneName")
+            recipeOneImage = document.getElementById("recipeOneImage")
+            recipeOneURL = document.getElementById("recipeOneURL")
+
+            myRandNum = Math.floor(Math.random() * 19)
+            recipeOneName.innerText = response.hits[myRandNum].recipe.label;
+            recipeOneImage.src = response.hits[myRandNum].recipe.image;
+            recipeOneURL.href = response.hits[myRandNum].recipe.shareAs;
+            recipeOneURL.textContent = ("Link to Recipe");
+
+            
         
 
-
-
-    movieT.innerText=result.Title;
-    countryOrigin.innerText= result.Country;
-    moviePlot.innerText= result.Plot;
-    posterURL= result.Poster;
-    mPoster.src= `${posterURL}`;
-    //document.getElementById('moviePoster').append(movPoster);
+        }
+    }
+    movieT.innerText = result.Title;
+    countryOrigin.innerText = result.Country;
+    moviePlot.innerText = result.Plot;
+    posterURL = result.Poster;
+    mPoster.src = `${posterURL}`;
+    
 
 };
 
-
-
-
-
-    document.getElementById('searchBtn').addEventListener('click',()=>
-    {
-        let userInput = document.getElementById("userInput").value;
-        if (userInput)
-            Search(userInput);
-    })
+document.getElementById('searchBtn').addEventListener('click', () => {
+    let userInput = document.getElementById("userInput").value;
+    if (userInput)
+        Search(userInput);
+})
