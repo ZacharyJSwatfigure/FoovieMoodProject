@@ -16,8 +16,8 @@
 
         <h3>
             Hello, and welcome to the Foovie Mood webpage! Do you have a favorite movie? Of course you do! Take that favorite movie of yours and enter the title into
-            the search bar below to search for five random dishes from that movies country of origin. Search again if you do not find a dish that interests you, or select one of the dishes and enjoy!
-            Don't have a favorite Movie?!? (weirdooo...) You can click the 'Random Movie' button to get a random movie and dish!
+            the search bar below to search for five random dishes from that movies country of origin. Search again if you do not find a dish that interests you, or select one of the Recipes and enjoy!
+            Don't have a favorite Movie?!? (weirdooo...) You can click the 'Random Movie' button to get a random movie and recipe!
         </h3>
     
 
@@ -43,23 +43,34 @@
             <h1 class = "title">The Movie</h1>
             <div class = "theMovie">
                 <h2 id = "movieTitle">Title</h2>
-               <h2 id = "moviePoster"></h2><img id = "Poster">
+                <h2 id = "moviePoster"></h2><img id = "Poster">
                 <h2 id = "movieDescription">Description</h2>
                 <h2 id = "movieCountry">Country of Origin</h2>
             </div>
         </div>
 
         <div class = "displaySearch">
-            <h1 class = "title">The Dishes</h1>
+            <h1 class = "title">The Recipes</h1>
 
             <ul class="dishList">
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-        </ul>
-        </div>
+                <div id = recipeOne>
+                    <h2 id = "recipeOneName"></h2>
+                    <img id = "recipeOneImage">
+                    <a href = "" id = "recipeOneURL"></a>
+                </div>
+                
+                <!-- <div id = recipeTwo>
+                    <h2 id = "recipeTwoName"></h2>
+                    <img id = "recipeTwoImage">
+                    <a href = "" id = "recipeTwoURL"></a>
+                </div>
+
+                <div id = recipeThree>
+                    <h2 id = "recipeThreeName"></h2>
+                    <img id = "recipeThreeImage">
+                    <a href = "" id = "recipeThreeURL"></a>
+                </div>
+        </div> -->
     </section>
 
 
@@ -73,6 +84,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src= assets/script.js></script>
+    
 
 </body>
 </html>
