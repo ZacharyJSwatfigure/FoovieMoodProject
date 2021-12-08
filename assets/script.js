@@ -117,7 +117,7 @@ function init(result) {
             recipeOneName.innerText = response.hits[myRandNum].recipe.label;
             recipeOneImage.src = response.hits[myRandNum].recipe.image;
             recipeOneURL.href = response.hits[myRandNum].recipe.shareAs;
-            recipeOneURL.textContent = ("Link to Recipe");
+            recipeOneURL.textContent = ("View Recipe");
 
 
             // setting current recipe as ready to save to array
