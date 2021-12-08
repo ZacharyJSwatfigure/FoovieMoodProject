@@ -121,7 +121,7 @@ function init(result) {
 
 
             // setting current recipe as ready to save to array
-            currentRecipeData = [recipeOneName.innerText, recipeOneImage.url ,recipeOneURL.innerText];
+            currentRecipeData = [recipeOneName.innerText, recipeOneImage.src ,recipeOneURL.href];
 
             
         
@@ -142,7 +142,7 @@ function saveCurrentRecipe () {
     savedFoodArr.push(currentRecipeData);
     console.log(savedFoodArr)
 
-    localStorage.setItem("savedFoodArr", savedFoodArr);
+    localStorage.setItem("savedFoodArr", JSON.stringify(savedFoodArr));
 }
 
 
