@@ -154,7 +154,9 @@ ul.dishList {
     display: flex;
     justify-content: center;
     color: red;
+    margin: auto;
     margin-top: 100px;
+    
 }
 
 #Poster {
@@ -178,4 +180,13 @@ ul.dishList {
 
 #colorMeRed {
     color: red;
+}
+
+#goBack {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: rgb(39, 36, 36);
+    color: white;
 }

@@ -4,6 +4,9 @@ let searchQ;
 let countryArr = [];
 let foodType = "";
 let foodListArr = [];
+let savedFoodArr = [];
+let currentRecipeData = [recipeOneName, recipeOneImage ,recipeOneURL];
+
 
 
 function movieAlert() {
@@ -69,9 +72,12 @@ function init(result) {
         case 'Germany':
         case 'Ukraine':
             console.log("Europe Dish");
-            foodType = "Central Europe";
+            foodType = "British";
             break;
         case 'France':
+            console.log("WeeWee monanmee");
+            foodType = "French";
+            break;
         case 'Italy':
             foodType = "Italian";
             console.log("Who wants Pasta");
@@ -113,6 +119,10 @@ function init(result) {
             recipeOneURL.href = response.hits[myRandNum].recipe.shareAs;
             recipeOneURL.textContent = ("Link to Recipe");
 
+
+            // setting current recipe as ready to save to array
+            currentRecipeData = [recipeOneName.innerText, recipeOneImage.url ,recipeOneURL.innerText];
+
             
         
 
@@ -128,6 +138,14 @@ function init(result) {
 
 };
 
+function saveCurrentRecipe () {
+    savedFoodArr.push(currentRecipeData);
+    console.log(savedFoodArr)
+
+    localStorage.setItem("savedFoodArr", savedFoodArr);
+}
+
+
 document.getElementById('searchBtn').addEventListener('click', () => {
     let userInput = document.getElementById("userInput").value;
     if (userInput)
@@ -135,6 +153,11 @@ document.getElementById('searchBtn').addEventListener('click', () => {
 })
 
 document.getElementById("recipeOneSave").addEventListener("click" , () => {
-    localStorage.setItem()
+    saveCurrentRecipe();
+})
+
+document.getElementById("userSaves").addEventListener("click" , () => {
+    window.location.assign("savePage.html");
+
 })
 
