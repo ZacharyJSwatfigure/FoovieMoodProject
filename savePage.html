@@ -15,7 +15,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
 rel="stylesheet"
 />
     <link rel="stylesheet" href="assets/style.css" />
-    <title>Foovie Mood Main</title>
+    <title>Foovie Mood Save Sheet</title>
 </head>
 <body>
 
@@ -73,76 +73,28 @@ rel="stylesheet"
 
     </section>
 
-    <!-- here is the section for the query part -->
+<section>
 
-    <section class ="border-top border-3 mt-4 searchBar">
-        <div class="mt-5">
-            <input class="form-control" id ="userInput" placeholder="Movie title" type ="text" value="">
-            <div class="col-12 d-flex justify-content-center mt-3 mb-3 gap-2">
-                <button class="btn" id="searchBtn">Search Movies</button>
-                <button class="btn" id="randomMovie">Random Movie</button>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- this will contain to divs display the searched for data -->
-    <!-- I removed the placeholder text so that it auto populates when movie is searched -->
-    <!-- Poseter still shows an outline before movie is searched.. -->
-    <section class ="options">
-
-        <div class ="displaySearch">
-            <div class = "theMovie">
-                <h2 id = "movieTitle"></h2>
-                <h2 id = "movieCountry"></h2>
-                <div id = "moviePoster"></div><img id ="Poster">
-                <p id = "movieDescription"></p>
-            </div>
-        </div>
-        <div class="displaySearch">
-            <div id= "recipeOne">
-                <h2 id="recipeOneName"></h2>
-                <img id="recipeOneImage">
-                <a href="" target = "_blank" class = "btn" id="recipeOneURL"></a>
-                <button class = "btn" id="recipeOneSave">Save this Recipe Here</button>
-            </div>
-    </section>
-
-    <footer>
-        <!-- Grid container -->
-        <!-- Copyright -->
-        <div class="position-relative">
-            <div class="text-center p-3 position-relative" style="background-color: rgba(0, 0, 0, 0.2);">
-                <h4 class="text-white ">Ayden, Jesus, Zac, & Zen</h4>
-                2021
-            </div>
-
-            <div class="container position-absolute bottom-50 end-0">
-                <div class="row d-flex flex-row-reverse">
-                    <div class="col-lg-2">
-                    <img
-                        src="img/spilledPopcorn.png"
-                        class="w-100"
-                    />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <ul id = "saveList">
+        
+    </ul>
 
 
 
 
 
 
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js">
-    </script>
+</section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src= assets/script.js></script>
+
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src= assets/script.js></script>
 
 
 </body>

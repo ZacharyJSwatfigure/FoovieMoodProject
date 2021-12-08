@@ -6,6 +6,22 @@ let foodType = "";
 let foodListArr = [];
 
 
+function movieAlert() {
+    window.alert("Oh no! Something went wrong. Please ensure you have entered a valid movie.");
+}
+
+function displayAll() {
+    document.getElementById("movieTitle").style.visibility = "visible";
+    document.getElementById("movieCountry").style.visibility = "visible";
+    document.getElementById("Poster").style.visibility = "visible";
+    document.getElementById("movieDescription").style.visibility = "visible";
+
+    document.getElementById("recipeOneName").style.visibility = "visible";
+    document.getElementById("recipeOneImage").style.visibility = "visible";
+    document.getElementById("recipeOneURL").style.visibility = "visible";
+    document.getElementById("recipeOneSave").style.visibility = "visible";
+}
+
 function getSearchQ(SearchMovie) {
     searchQ = 't';
 }
@@ -18,7 +34,9 @@ function Search(SearchMovie) {
         })
         .then(result => {
             init(result);
-
+        })
+        .catch((error) => {
+            console.error('Error:', movieAlert());
         })
 
 }
@@ -105,6 +123,7 @@ function init(result) {
     moviePlot.innerText = result.Plot;
     posterURL = result.Poster;
     mPoster.src = `${posterURL}`;
+    displayAll()
     
 
 };
@@ -114,3 +133,8 @@ document.getElementById('searchBtn').addEventListener('click', () => {
     if (userInput)
         Search(userInput);
 })
+
+document.getElementById("recipeOneSave").addEventListener("click" , () => {
+    localStorage.setItem()
+})
+
