@@ -134,8 +134,7 @@ document.getElementById('searchBtn').addEventListener('click', () => {
         Search(userInput);
 })
 
-
-// start the save list stuff here
-
-saveList = document.getElementById("saveList")
+document.getElementById("recipeOneSave").addEventListener("click" , () => {
+    localStorage.setItem()
+})
 
