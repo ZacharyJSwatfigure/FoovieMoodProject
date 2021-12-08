@@ -14,6 +14,11 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
 rel="stylesheet"
 />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orelega+One&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/style.css" />
     <title>Foovie Mood Main</title>
 </head>
@@ -94,7 +99,7 @@ rel="stylesheet"
             <div class = "theMovie">
                 <h2 id = "movieTitle"></h2>
                 <h2 id = "movieCountry"></h2>
-                <div id = "moviePoster"></div><img id ="Poster">
+                <div id = "moviePoster"></div><img class = "imgs" id ="Poster">
                 <p id = "movieDescription"></p>
             </div>
         </div>
@@ -103,8 +108,8 @@ rel="stylesheet"
             <div id= "recipeOne">
                 <h2 id="recipeOneName"></h2>
                 <img id="recipeOneImage">
-                <a href="" target = "_blank" class = "btn" id="recipeOneURL"></a>
-                <button class = "btn" id="recipeOneSave">Save this Recipe Here</button>
+                <a href="" target = "_blank" class = "btn btn-rounded btnbg" id="recipeOneURL"></a>
+                <button type = "button" class = "btn btn-rounded btnbg" id="recipeOneSave">Save Recipe</button>
             </div>
     </section>
 
