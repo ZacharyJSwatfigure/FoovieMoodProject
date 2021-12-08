@@ -180,6 +180,15 @@ ul.dishList {
     animation-direction: alternate;
 }
 
+#goBack {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    border-radius: 15px;
+    background-color: rgb(39, 36, 36);
+    color: white;
+}
+
 #searchBtn {
     color:white;
 }
