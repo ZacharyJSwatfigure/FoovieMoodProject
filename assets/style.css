@@ -100,6 +100,7 @@ section.searchBar::after {
     justify-content: center;
     font-size: 35px;
     text-decoration: underline;
+    font-weight: bold;
 }
 
 
@@ -206,4 +207,3 @@ ul.dishList {
     background-color:rgb(46, 47, 66);
     font-size: 14px;
 }
-
