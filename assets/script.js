@@ -7,8 +7,10 @@ let foodListArr = [];
 let savedFoodArr = [];
 let currentRecipeData = [recipeOneName, recipeOneImage ,recipeOneURL];
 
-
-
+window.onload = () => {
+    currentRecipeData = JSON.parse( localStorage.getItem('savedFoodArr'));
+    console.log(currentRecipeData);
+}
 function movieAlert() {
     window.alert("Oh no! Something went wrong. Please ensure you have entered a valid movie.");
 }

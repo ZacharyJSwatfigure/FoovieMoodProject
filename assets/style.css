@@ -54,12 +54,13 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    color: red;
+    color: white;
     margin-top: 60px;
     width: 80%;
     background-color: #0f1113;
     border-radius: 3%;
 }
+
 
 .title {
     font-size: 35px;
@@ -67,7 +68,6 @@ body {
 }
 
 .displaySearch {
-    /* visibility: hidden; */
     display: flex;
     flex-direction: row;
 }
@@ -131,6 +131,7 @@ ul.dishList {
     max-width: 350px;
     line-height: 50px;
     justify-content: center;
+    font-weight: bold;
     text-decoration: underline;
 }
 
@@ -143,20 +144,20 @@ ul.dishList {
 
 #recipeOneURL {
     visibility: hidden;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    color: red;
-    margin-top: 100px;
+    color: white;
+    margin-top: 50px;
+    margin-right: 17px;
+    margin-left: 0px;
 }
 
 #recipeOneSave {
     visibility: hidden;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
-    color: red;
-    margin: auto;
-    margin-top: 100px;
-    
+    color: white;
+    margin-top: 30px;
 }
 
 #Poster {
@@ -168,6 +169,7 @@ ul.dishList {
     margin-top: 60px;
     float: left;
 }
+
 .logo {
     margin-top: 5   0px;
     border-radius: 25px;
@@ -178,9 +180,6 @@ ul.dishList {
     animation-direction: alternate;
 }
 
-#colorMeRed {
-    color: red;
-}
 
 #goBack {
     display: flex;
@@ -190,3 +189,21 @@ ul.dishList {
     background-color: rgb(39, 36, 36);
     color: white;
 }
+
+#searchBtn {
+    color:white;
+}
+
+#randomMovie {
+    color:white;
+}
+
+#userSaves {
+    color:white;
+}
+
+.btnbg {
+    background-color:rgb(46, 47, 66);
+    font-size: 14px;
+}
+
