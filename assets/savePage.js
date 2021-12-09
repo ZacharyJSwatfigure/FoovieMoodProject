@@ -1,5 +1,4 @@
-saveList = document.getElementById("saveList");
-
+let theList = document.getElementById("theList")
 
 
 let  localStoreRecipes = JSON.parse( localStorage.getItem('savedFoodArr') );
@@ -15,33 +14,39 @@ function addRecipe () {
     const result = Object.keys(localStoreRecipes).length;
     console.log(result);
     for (let i = 0; i < result; i++) {
-        console.log(result)
 
         for(i in localStoreRecipes) {
             if(localStoreRecipes.hasOwnProperty(i)) {
                 console.log(Object.values(localStoreRecipes[i]));
                 
                 let currentRecipeInfo = localStoreRecipes[i];
+
                 for(i in currentRecipeInfo) {
                     console.log(Object(currentRecipeInfo[i]));
-                    if (currentRecipeInfo[i].value == 0) {
-                        var h2 = document.createElement('h2');
-                        h2.textContent = currentRecipeInfo[i].textContent;
-                        h2.setAttribute('recipeOneName');
-                        document.body.appendChild(h2);
-                        console.log("It word h2")
+                    if (i == 0) {
+                        var listItem = document.createElement('h2');
+
+                        //Set the text of the list element to the JSON response's .html_url property
+                        listItem.textContent = currentRecipeInfo[i];
+                
+                        listItem.appendChild(theList);
+                        //Append the li element to the id associated with the ul element.
+                        console.log("It reads me 0")
                     };
-                    if (currentRecipeInfo[i] == 1) {
-                        var img = document.createElement('img');
-                        img.src = currentRecipeInfo[i] 
-                        img.setAttribute('recipeOneName', 'note');
-                        document.body.appendChild(img);
+                    if (i == 1) {
+                        var listItem = document.createElement('h2');
+
+                        //Set the text of the list element to the JSON response's .html_url property
+                        listItem.textContent = currentRecipeInfo[i].textContent;
+                
+                        listItem.appendChild(theList);
+                        //Append the li element to the id associated with the ul element.
+                        console.log("It reads me 1")
+        
                     };
-                    if (currentRecipeInfo[i] == 2) {
-                        var a = document.createElement('a');
-                        a.textContent = "New Heading!!!";
-                        a.setAttribute('recipeOneName', 'note');
-                        document.body.appendChild(a);
+                    if (i == 2) {
+                        console.log("It reads me 2")
+            
                     };
                 }
                 
