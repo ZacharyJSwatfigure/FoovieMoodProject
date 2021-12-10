@@ -207,3 +207,8 @@ ul.dishList {
     font-size: 14px;
 }
 
+
+#displayMySaves {
+    display: flex;
+    flex-direction: row;
+}
