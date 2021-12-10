@@ -1,5 +1,11 @@
 let theList = document.getElementById("theList")
 
+let createRecipeName = document.createElement("h2")
+let createRecipeNameText = "";
+let createRecipeImg = document.createElement("img")
+let createRecipeLink = document.createElement("a")
+
+
 
 let  localStoreRecipes = JSON.parse( localStorage.getItem('savedFoodArr') );
 console.log(localStoreRecipes)
@@ -24,30 +30,31 @@ function addRecipe () {
                 for(i in currentRecipeInfo) {
                     console.log(Object(currentRecipeInfo[i]));
                     if (i == 0) {
-                        var listItem = document.createElement('h2');
-
-                        //Set the text of the list element to the JSON response's .html_url property
-                        listItem.textContent = currentRecipeInfo[i];
-                
-                        listItem.appendChild(theList);
-                        //Append the li element to the id associated with the ul element.
-                        console.log("It reads me 0")
-                    };
+                        
+                        createRecipeNameText = document.createTextNode(currentRecipeInfo[0]);
+                        createRecipeName.appendChild(createRecipeNameText);
+                        document.body.appendChild(createRecipeName)
+                    
+                        console.log("It reads the name")
+                    }
                     if (i == 1) {
-                        var listItem = document.createElement('h2');
 
-                        //Set the text of the list element to the JSON response's .html_url property
-                        listItem.textContent = currentRecipeInfo[i].textContent;
-                
-                        listItem.appendChild(theList);
-                        //Append the li element to the id associated with the ul element.
-                        console.log("It reads me 1")
+                        createRecipeImg.src = (currentRecipeInfo[1]);
+                        document.body.appendChild(createRecipeImg);
+                        
+                        console.log("It reads an image")
         
-                    };
+                    }
                     if (i == 2) {
-                        console.log("It reads me 2")
+                        createRecipeLink.href = (currentRecipeInfo[2]);
+                        createRecipeLink.innerHTML = ("Link To Recipe");
+                        document.body.appendChild(createRecipeLink);
+                        
+                        console.log("It reads a link")
             
-                    };
+                    } else {
+                        console.log("done with loop")
+                    }
                 }
                 
             }

@@ -207,3 +207,8 @@ ul.dishList {
     background-color:rgb(46, 47, 66);
     font-size: 14px;
 }
+
+#displayMySaves {
+    display: flex;
+    flex-direction: row;
+}
