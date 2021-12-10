@@ -2,7 +2,10 @@
 let MovieApi = 'db3a630e';
 let searchQ;
 let countryArr = [];
-let foodType = "";
+let foodType;
+let FoodApi = '2b9e76ada8e917607dc4fd6bd442e887';
+let RMovieApi= '6e733cd10602b7fcb720eb58e6da2350';
+let searchFood;
 let foodListArr = [];
 let savedFoodArr = [];
 let currentRecipeData = [recipeOneName, recipeOneImage ,recipeOneURL];
@@ -11,6 +14,7 @@ window.onload = () => {
     currentRecipeData = JSON.parse( localStorage.getItem('savedFoodArr'));
     console.log(currentRecipeData);
 }
+
 function movieAlert() {
     window.alert("Oh no! Something went wrong. Please ensure you have entered a valid movie.");
 }
@@ -31,8 +35,14 @@ function getSearchQ(SearchMovie) {
     searchQ = 't';
 }
 
+
+function getFood(foodType) {
+    searchFood= 'cuisineType';
+}
+
 function Search(SearchMovie) {
     getSearchQ(SearchMovie);
+
     fetch(`https://www.omdbapi.com/?apikey=${MovieApi}&${searchQ}=${SearchMovie}`)
         .then(result => {
             return result.json();
@@ -46,6 +56,93 @@ function Search(SearchMovie) {
 
 }
 
+function rMovie() {
+    fetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${RMovieApi}`)
+        .then(response => {
+            return response.json();
+        })
+        .then(response => {
+            console.log(response);
+            let nR = Math.floor(Math.random() * 25);
+
+          if (response.results[nR].original_title) {
+            document.getElementById('movieTitle').innerText = response.results[nR].original_title;
+            }
+            else
+              document.getElementById('movieTitle').innerText = response.results[nR].original_name;
+
+
+            document.getElementById('movieDescription').innerText = response.results[nR].overview;
+            document.getElementById('Poster').src = 'https://image.tmdb.org/t/p/w500' + response.results[nR].poster_path;
+
+            let countryOrigin = document.getElementById('movieCountry');
+
+
+            switch (response.results[nR].original_language) {
+                case 'en':
+                    foodType = 'American';
+                    console.log(foodType);
+                    countryOrigin.textContent= ('United States');
+                    break;
+                case 'ko':
+                    foodType = 'Asian';
+                    console.log(foodType);
+                    countryOrigin.textContent= ('Korean');
+                    break;
+                case 'ja':
+                    foodType = 'Japanese';
+                    console.log(foodType);
+                    countryOrigin.textContent= ('Japan');
+                    break;
+                case 'fr':
+                    foodType = 'French';
+                    console.log(foodType);
+                    countryOrigin.textContent= ('France');
+                    break;
+                case 'es':
+                    foodType = 'Eastern Europe';
+                    console.log(foodType);
+                    countryOrigin.textContent= ('Spain, Mexico');
+                    break;
+                default:
+
+                    break;
+            }
+            getRecipe(foodType);
+        })
+}
+
+function getRecipe(foodType) {
+    {
+        getFood(foodType);
+
+        fetch(`https://api.edamam.com/api/recipes/v2?app_id=fea86a91&app_key=${FoodApi}&dishType=Main_course&type=public&${searchFood}=${foodType}`)
+            .then(response => {
+                return response.json();
+            })
+            .then(response => {
+                food(response);
+            })
+    }
+    function food(response) {
+        console.log(response);
+
+        let nR = Math.floor(Math.random() * 19);
+        let recipeName = document.getElementById('recipeOneName');
+        let recipeImage =  document.getElementById('recipeOneImage');
+        let recipeURL =  document.getElementById('recipeOneURL');
+
+
+        recipeName.innerText = response.hits[nR].recipe.label;
+        recipeImage.src = response.hits[nR].recipe.image;
+        recipeURL.textContent = ("View Recipe");
+        recipeURL.href = response.hits[nR].recipe.url;
+
+        // setting current recipe as ready to save to array
+        currentRecipeData = [recipeName.innerText, recipeImage.src ,recipeURL.href];
+    }
+}
+
 function init(result) {
     console.log(result);
     let movieT = document.getElementById('movieTitle');
@@ -53,15 +150,17 @@ function init(result) {
     let moviePlot = document.getElementById('movieDescription');
     let mPoster = document.getElementById('Poster');
 
+    movieT.innerText = result.Title;
+    countryOrigin.innerText = result.Country;
+    moviePlot.innerText = result.Plot;
+    let posterURL = result.Poster;
+    mPoster.src = `${posterURL}`;
+    displayAll();
+
     let countryArr = result.Country.split(",").map(function (value) {
         return value.trim();
     });
     console.log(countryArr);
-
-
-    //let movPoster = new Image(300,450);
-
-
 
     switch (countryArr[0]) {
         case 'United States':
@@ -73,7 +172,7 @@ function init(result) {
         case 'United Kingdom':
         case 'Germany':
         case 'Ukraine':
-            console.log("Europe Dish");
+            console.log("European Dish");
             foodType = "British";
             break;
         case 'France':
@@ -82,63 +181,26 @@ function init(result) {
             break;
         case 'Italy':
             foodType = "Italian";
-            console.log("Who wants Pasta");
+            console.log("Who wants Pasta?");
             break;
         case 'North Korea':
         case 'South Korea':
-            console.log();
+            console.log('ASIAN POWAA');
             foodType = "Asian";
             break;
         case "China":
             foodType = "Chinese";
+            console.log('Kung Fu');
             break;
         case "Japan":
             foodType = "Japanese";
+            console.log('Omaye wa Shindeiru');
+            break;
         default:
             break;
     }
-    fetch(`https://api.edamam.com/api/recipes/v2?app_id=fea86a91&app_key=2b9e76ada8e917607dc4fd6bd442e887&type=public&dishType=Main_course&cuisineType=${foodType}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(response => {
-            food(response);
-        })
-    function food(response) {
-        console.log(response);
-        for (let i = 0; i < 3; i++) {                                                                               
-            // foodListArr.push(response.hits[Math.floor(Math.random() * 19)]);
-
-            // console.log(foodListArr, "here is log");
-
-            recipeOneName = document.getElementById("recipeOneName")
-            recipeOneImage = document.getElementById("recipeOneImage")
-            recipeOneURL = document.getElementById("recipeOneURL")
-
-            myRandNum = Math.floor(Math.random() * 19)
-            recipeOneName.innerText = response.hits[myRandNum].recipe.label;
-            recipeOneImage.src = response.hits[myRandNum].recipe.image;
-            recipeOneURL.href = response.hits[myRandNum].recipe.shareAs;
-            recipeOneURL.textContent = ("View Recipe");
-
-
-            // setting current recipe as ready to save to array
-            currentRecipeData = [recipeOneName.innerText, recipeOneImage.src ,recipeOneURL.href];
-
-            
-        
-
-        }
-    }
-    movieT.innerText = result.Title;
-    countryOrigin.innerText = result.Country;
-    moviePlot.innerText = result.Plot;
-    posterURL = result.Poster;
-    mPoster.src = `${posterURL}`;
-    displayAll()
-    
-
-};
+    getRecipe(foodType);
+}
 
 function saveCurrentRecipe () {
     savedFoodArr.push(currentRecipeData);
@@ -154,11 +216,19 @@ document.getElementById('searchBtn').addEventListener('click', () => {
         Search(userInput);
 })
 
-document.getElementById("recipeOneSave").addEventListener("click" , () => {
+document.getElementById('randomMovie').addEventListener('click',()=>
+{
+    rMovie();
+})
+
+
+document.getElementById("recipeOneSave").addEventListener("click" , () =>
+{
     saveCurrentRecipe();
 })
 
-document.getElementById("userSaves").addEventListener("click" , () => {
+document.getElementById("userSaves").addEventListener("click" , () =>
+{
     window.location.assign("savePage.html");
 
 })
